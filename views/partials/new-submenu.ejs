@@ -1,0 +1,73 @@
+<div style="width: 100%; display: flex; justify-content: flex-end">
+  <i
+    class="fa-solid fa-trash"
+    id="eliminate-submenu-<%= id %>"
+    name="eliminate-submenu-<%= name %>"
+    style="padding: 10px"
+  ></i>
+</div>
+<label for="new-submenu-title-<%= id %>">Título</label>
+<input
+  type="text"
+  name="new-submenu-title-<%= name %>"
+  id="new-submenu-title-<%= id %>"
+/>
+
+<label for="new-submenu-description">Descripción</label>
+<textarea
+  name="new-submenu-description-<%= name %>"
+  id="new-submenu-description-<%= id %>"
+  cols="30"
+  rows="10"
+></textarea>
+<div class="form-media">
+  <div>
+    <label for="new-submenu-image-<%= id %>">Imagen</label>
+    <input
+      type="file"
+      name="new-submenu-image-<%= name %>"
+      id="new-submenu-image-<%= id %>"
+      accept="image/*"
+      data-path=""
+      data-disabled="false"
+    />
+  </div>
+  <div>
+    <label for="new-submenu-video-<%= id %>">Video</label>
+    <input
+      type="file"
+      name="new-submenu-video-<%= name %>"
+      id="new-submenu-video-<%= id %>"
+      accept="video/*"
+      data-path=""
+      data-disabled="false"
+    />
+  </div>
+  <div>
+    <label for="new-submenu-audio-<%= id %>">Canción de fondo</label>
+    <input
+      type="file"
+      name="new-submenu-audio-<%= name %>"
+      id="new-submenu-audio-<%= id %>"
+      accept="audio/*"
+      data-path=""
+      data-disabled="false"
+    />
+  </div>
+</div>
+<div class="scenes-container" id="scenes-container">
+  <input
+    type="button"
+    value="Añadir escena"
+    id="add-scene-btn-<%= id %>"
+    name="add-scene-btn-<%= name %>"
+  />
+</div>
+<div class="submenu-container" id="submenu-container">
+  <input
+    type="button"
+    value="Añadir submenú"
+    id="add-submenu-btn-<%= id %>"
+    name="add-submenu-btn-<%= name %>"
+  />
+</div>

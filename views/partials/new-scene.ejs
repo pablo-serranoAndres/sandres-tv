@@ -1,0 +1,40 @@
+<div
+  style="width: 100%; display: flex; justify-content: flex-end; padding: 10px"
+>
+  <i
+    class="fa-solid fa-trash"
+    id="eliminate-scene-<%= id %>"
+    style="padding: 10px"
+  ></i>
+</div>
+<label for="new-scene-title-<%= id %>">Título</label>
+<input
+  type="text"
+  name="new-scene-title-<%= name %>"
+  id="new-scene-title-<%= id %>"
+/>
+<label for="new-scene-description-<%= id %>">Descripción corta</label>
+<textarea
+  name="new-scene-description-<%= name %>"
+  id="new-scene-description-<%= id %>"
+  cols="30"
+  rows="3"
+></textarea>
+<label for="new-scene-video-<%= id %>">Video</label>
+<input
+  type="file"
+  name="new-scene-video-<%= name %>"
+  id="new-scene-video-<%= id %>"
+  accept="video/*"
+  data-path=""
+  data-disabled="false"
+/>
+<label for="new-scene-image-<%= id %>">Imagen</label>
+<input
+  type="file"
+  name="new-scene-image-<%= name %>"
+  id="new-scene-image-<%= id %>"
+  accept="image/*"
+  data-path=""
+  data-disabled="false"
+/>

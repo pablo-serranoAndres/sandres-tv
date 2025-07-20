@@ -1,0 +1,418 @@
+/* styles.css */
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #6b8cae;
+  --accent-color: #ff7e5f;
+  --scene-color: #5cb85c;
+  --submenu-color: #5bc0de;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #f5f7fa;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+form {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+label {
+  display: block;
+  margin: 15px 0 8px;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 300;
+  transition: var(--transition);
+  letter-spacing: 0.2px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-media {
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 20px; */
+  margin: 20px 0;
+}
+
+.form-media > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Estilos modificados para inputs de archivo */
+.input-file-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input[type="file"] {
+  padding: 20px;
+  background: var(--light-color);
+  cursor: pointer;
+}
+
+.file-info {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.file-name {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  word-break: break-all;
+}
+
+input[type="button"],
+input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  transition: var(--transition);
+  margin: 10px 0;
+  width: auto;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+input[type="submit"] {
+  background-color: var(--success-color);
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+}
+
+input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* Contenedores principales */
+.scenes-container {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: rgba(92, 184, 92, 0.05);
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--scene-color);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.submenu-container {
+  margin: 30px 0;
+  padding: 20px;
+  background-color: rgba(91, 192, 222, 0.05);
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--submenu-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilos para componentes de escena */
+.scenes-container article {
+  background: white;
+  padding: 25px;
+  margin: 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  border-left: 5px solid var(--scene-color);
+  transition: var(--transition);
+}
+
+.scene-component:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scene-component label {
+  color: var(--scene-color);
+}
+
+.scene-component input[type="button"] {
+  background-color: var(--scene-color);
+}
+
+.scene-component input[type="button"]:hover {
+  background-color: #449d44;
+}
+
+/* Estilos para componentes de submenú */
+.submenu-container article {
+  background: white;
+  padding: 25px;
+  margin: 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  border-left: 5px solid var(--submenu-color);
+  transition: var(--transition);
+}
+
+.submenu-component:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.submenu-component label {
+  color: var(--submenu-color);
+}
+
+.submenu-component input[type="button"] {
+  background-color: var(--submenu-color);
+}
+
+.submenu-component input[type="button"]:hover {
+  background-color: #31b0d5;
+}
+
+/* Icono de eliminar */
+.fa-trash {
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: var(--transition);
+  margin-left: auto;
+  display: block;
+}
+
+.scene-component .fa-trash {
+  color: var(--scene-color);
+}
+
+.submenu-component .fa-trash {
+  color: var(--submenu-color);
+}
+
+.scene-component .fa-trash:hover,
+.submenu-component .fa-trash:hover {
+  color: var(--danger-color);
+  transform: scale(1.1);
+}
+
+/* Contenedores anidados */
+.submenu-component .scenes-container {
+  background-color: rgba(92, 184, 92, 0.03);
+  border-color: var(--scene-color);
+  margin-top: 20px;
+}
+
+.submenu-component .submenu-container {
+  background-color: rgba(91, 192, 222, 0.03);
+  border-color: var(--submenu-color);
+  margin-top: 20px;
+}
+
+/* Botones de añadir */
+#add-scene-btn-0-0,
+[id^="add-scene-btn-"] {
+  background-color: var(--scene-color);
+  margin-top: 10px;
+}
+
+#add-scene-btn-0-0:hover,
+[id^="add-scene-btn-"]:hover {
+  background-color: #449d44;
+}
+
+#add-submenu-btn-0-0,
+[id^="add-submenu-btn-"] {
+  background-color: var(--submenu-color);
+  margin-top: 10px;
+}
+
+#add-submenu-btn-0-0:hover,
+[id^="add-submenu-btn-"]:hover {
+  background-color: #31b0d5;
+}
+
+/* Separador visual entre componentes */
+.scene-component::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(92, 184, 92, 0.2);
+  margin: 25px 0 0;
+}
+
+.submenu-component::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: rgba(91, 192, 222, 0.2);
+  margin: 25px 0 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .form-media {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-media > div {
+    width: 100%;
+  }
+
+  body {
+    padding: 10px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+input[type="submit"]:disabled {
+  background-color: #cccccc !important;
+  color: #666666 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 0.7;
+  position: relative;
+}
+input[type="submit"] {
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  transition: var(--transition);
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+input[type="submit"]:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Estilos cuando está deshabilitado */
+input[type="submit"]:disabled {
+  background-color: var(--disabled-color);
+  color: var(--disabled-text);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  border: 1px solid #bdbdbd;
+}
+
+/* Contenedor del icono de carga */
+.submit-loading {
+  display: none;
+  text-align: center;
+  margin-top: 30px;
+  padding: 15px;
+  width: 100%;
+  background-color: var(--disabled-color);
+  color: var(--disabled-text);
+  border-radius: var(--border-radius);
+  border: 1px solid #bdbdbd;
+}
+
+/* Icono de carga */
+.submit-loading .fa-spinner {
+  font-size: 20px;
+  animation: spin 1s linear infinite;
+  color: var(--disabled-text);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Transición entre botón e icono */
+.form-submit-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Cuando está cargando */
+.form-submit-wrapper.loading input[type="submit"] {
+  display: none;
+}
+
+.form-submit-wrapper.loading .submit-loading {
+  display: block;
+}
