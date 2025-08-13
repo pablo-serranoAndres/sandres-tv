@@ -10,6 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="/css/styles.css" />
     <script src="/js/dynamicForm.js"></script>
     <script src="/js/generateJson.js"></script>
@@ -59,17 +60,19 @@
               data-disabled="false"
             />
           </div>
-          <div>
-            <label for="main-audio">Canción de fondo</label>
-            <input
-              type="file"
-              name="main-audio"
-              id="main-audio"
-              accept="audio/*"
-              data-path=""
-              data-disabled="false"
-            />
-          </div>
+
+          <label for="main-categorie">Seleccionar categoría:</label>
+          <select name="main-categorie" id="main-categorie">
+            <option value="Calebraciones">Calebraciones</option>
+            <option value="Deportes">Deportes</option>
+            <option value="Familia">Familia</option>
+            <option value="Fotos" disabled>Fotos</option>
+            <option value="Guillermo">Guillermo</option>
+            <option value="Pablo">Pablo</option>
+            <option value="Teatro">Teatro</option>
+            <option value="Varios">Varios</option>
+            <option value="Viajes">Viajes</option>
+          </select>
         </div>
         <div class="scenes-container" id="scenes-container">
           <input

@@ -3,7 +3,6 @@ const path = require("path");
 
 exports.handleFile = (req, res) => {
   const file = req.file;
-  console.log(file);
 
   if (!file) {
     return res.json({

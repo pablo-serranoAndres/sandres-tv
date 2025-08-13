@@ -1,9 +1,10 @@
 let newProject = {
+  id: "",
   title: "",
   description: "",
   image: "",
   video: "",
-  audio: "",
+  categorie: "",
   scenes: [],
   submenus: [],
 };
@@ -20,12 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
       case "image":
         target.image = path;
         break;
+      case "categorie":
+        target.categorie = value;
+        break;
       case "video":
         target.video = path;
         break;
-      case "audio":
-        target.audio = path;
-        break;
+
       default:
     }
   };
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
           title: "",
           description: "",
           image: "",
-          audio: "",
+          // audio: "",
           video: "",
           scenes: [],
           submenus: [],
@@ -149,14 +151,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = formDataArray[i][0];
       const value = formDataArray[i][1];
 
+      console.log(value);
+
       if (name.startsWith("main")) handleGeneralInfo(name, value);
       if (name.startsWith("new-scene")) handleScene(name, value);
       if (name.startsWith("new-submenu")) handleSubmenu(name, value);
     }
-    console.log(JSON.stringify(newProject));
+    // console.log(JSON.stringify(newProject));
+    newProject.id = `${newProject.title.toLowerCase().split(" ").join("-")}`;
     sendJson(newProject);
   });
+
+  const addToCategories = () => {
+    console.log("adding to categories");
+  };
+
   const sendJson = (json) => {
+    addToCategories();
+
     fetch(`/upload/json`, {
       method: "POST",
       headers: {
