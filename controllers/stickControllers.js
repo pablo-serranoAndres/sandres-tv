@@ -12,8 +12,30 @@ exports.getAllCategories = (req, res) => {
     res.sendFile(folder);
   });
 };
+// exports.getAllImages = (req, res) => {
+//   const items = req.body;
 
-exports.getAllImages = (req, res) => {};
+//   res.attachment("images.zip");
+
+//   const archive = archiver("zip", { zlib: { level: 9 } });
+//   archive.pipe(res);
+
+//   items.forEach((item) => {
+//     const safeName = path.basename(item.src);
+//     const filePath = path.join(
+//       __dirname,
+//       "..",
+//       "uploads",
+//       "image",
+//       `${safeName}.jpg`
+//     );
+//     if (fs.existsSync(filePath)) {
+//       archive.file(filePath, { name: `${safeName}.jpg` });
+//     }
+//   });
+
+//   archive.finalize();
+// };
 
 exports.getProjectById = (req, res) => {
   const folder = path.join(

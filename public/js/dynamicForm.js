@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       const idParts = e.target.id.split("-");
       const uuidEliminate = idParts[idParts.length - 1];
-      console.log(idParts[1]);
 
       const itemEliminate =
         idParts[1] === "scene"

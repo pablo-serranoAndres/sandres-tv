@@ -27,7 +27,6 @@ document.addEventListener("change", (e) => {
         .then((data) => {
           if (data.status === 200) {
             alert(data.message);
-            console.log(data.path);
             document.getElementById(e.target.id).dataset.path = data.path;
           } else {
             alert(data.message);

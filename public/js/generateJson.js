@@ -151,23 +151,51 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = formDataArray[i][0];
       const value = formDataArray[i][1];
 
-      console.log(value);
-
       if (name.startsWith("main")) handleGeneralInfo(name, value);
       if (name.startsWith("new-scene")) handleScene(name, value);
       if (name.startsWith("new-submenu")) handleSubmenu(name, value);
     }
-    // console.log(JSON.stringify(newProject));
     newProject.id = `${newProject.title.toLowerCase().split(" ").join("-")}`;
     sendJson(newProject);
   });
 
-  const addToCategories = () => {
-    console.log("adding to categories");
+  const addToCategoriesJSON = (categorie, id, title, image) => {
+    console.log(`añadiendo categoria: ${categorie}`);
+    const adaptedRoute = `/${image}`;
+    fetch(`/stick/categories`)
+      .then((res) => res.json())
+      .then((categories) => {
+        const target = categories.find((cat) => cat.name === categorie);
+
+        if (!target) {
+          console.warn("Categoria no encontrada");
+          return categories;
+        }
+
+        const newItem = { id: id, title: title, image: adaptedRoute };
+        target.items.push(newItem);
+        return categories;
+      })
+      .then((updatedCategories) => {
+        if (!updatedCategories) return;
+
+        return fetch(`/upload/categories`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedCategories),
+        });
+      });
   };
 
   const sendJson = (json) => {
-    addToCategories();
+    addToCategoriesJSON(
+      newProject.categorie,
+      newProject.id,
+      newProject.title,
+      newProject.image
+    );
 
     fetch(`/upload/json`, {
       method: "POST",

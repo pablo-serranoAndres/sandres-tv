@@ -13,6 +13,11 @@ app.set("views", path.join(__dirname, "views"));
 app.use(cors());
 app.use(express.static(path.join(__dirname, "views")));
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  "/uploads/image",
+  express.static(path.join(__dirname, "uploads", "image"))
+);
+
 app.use(express.urlencoded({ extended: true })); // Middleware para leer datos de formularios
 app.use(express.json());
 
