@@ -1,0 +1,25 @@
+<div class="featured-project-list-container">
+  <h1>Editar proyectos <%= title %></h1>
+  <button>Guardar</button>
+  <ul class="featured-project-list">
+    <% projects.forEach(project => { %>
+    <li>
+      <%= project.title %>
+      <div class="featured-buttons">
+        <div class="featured-buttons-item">
+          <span>Editar</span>
+          <button class="featured-edit-project-btn" data-id="<%= project.id %>">
+            <i class="fa-solid fa-file-circle-plus" style="color: white"></i>
+          </button>
+        </div>
+        <div class="featured-buttons-item">
+          <span>Destacado</span>
+          <button class="featured-edit-project-btn" data-id="<%= project.id %>">
+            <i class="fa-solid fa-file-circle-plus" style="color: white"></i>
+          </button>
+        </div>
+      </div>
+    </li>
+    <% }) %>
+  </ul>
+</div>

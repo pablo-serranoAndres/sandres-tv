@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  color: #333;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Estilos para el contenedor de proyectos destacados */
+.featured-project-list-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(142, 121, 96, 0.1);
+}
+
+.featured-project-list-container h1 {
+  color: #6c5d4b;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e8e1d7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botón Guardar principal */
+.featured-project-list-container > button {
+  background: linear-gradient(135deg, #6c5d4b 0%, #8e7960 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(108, 93, 75, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.featured-project-list-container > button:hover {
+  background: linear-gradient(135deg, #5a4b3a 0%, #7c6952 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(108, 93, 75, 0.4);
+}
+
+.featured-project-list-container > button i {
+  font-size: 18px;
+}
+
+/* Estilos para la lista de proyectos destacados */
+.featured-project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featured-project-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #5a4b3a;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(142, 121, 96, 0.1);
+}
+
+/* Alternar colores de fila */
+.featured-project-list li:nth-child(odd) {
+  background-color: #f8f9fa; /* Gris muy claro */
+}
+
+.featured-project-list li:nth-child(even) {
+  background-color: #e9ecef; /* Gris ligeramente más oscuro */
+}
+
+/* Efecto hover para las filas */
+.featured-project-list li:hover {
+  background-color: #dee2e6; /* Gris medio al hacer hover */
+  transform: translateX(5px);
+}
+
+/* Quitar borde del último elemento */
+.featured-project-list li:last-child {
+  border-bottom: none;
+}
+
+/* Contenedor de botones - OCUPA 20% */
+.featured-buttons {
+  display: flex;
+  gap: 20px;
+  width: 20%;
+  min-width: 160px;
+  justify-content: flex-end;
+}
+
+/* Cada grupo de botón con texto */
+.featured-buttons-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Texto centrado sobre el botón */
+.featured-buttons-item span {
+  font-size: 12px;
+  color: #6c5d4b;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Estilos para los botones de acción */
+.featured-edit-project-btn {
+  background: linear-gradient(135deg, #8e7960 0%, #bda18a 100%);
+  border: none;
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(142, 121, 96, 0.2);
+}
+
+.featured-edit-project-btn:hover {
+  background: linear-gradient(135deg, #7c6952 0%, #a58a6e 100%);
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(142, 121, 96, 0.3);
+}
+
+.featured-edit-project-btn i {
+  font-size: 16px;
+  color: white;
+}
+
+/* Botón destacado con estilo diferente */
+.featured-buttons-item:nth-child(2) .featured-edit-project-btn {
+  background: linear-gradient(135deg, #a58a6e 0%, #d6cec1 100%);
+}
+
+.featured-buttons-item:nth-child(2) .featured-edit-project-btn:hover {
+  background: linear-gradient(135deg, #8e7960 0%, #bda18a 100%);
+}
+
+/* Estilos para el texto del proyecto (ocupa el 80% restante) */
+.featured-project-list li {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Asegurar que el título ocupe el espacio restante */
+.featured-project-list li {
+  flex: 1;
+}
+
+/* Efecto de transición suave para toda la lista */
+.featured-project-list-container {
+  transition: transform 0.3s ease;
+}
+
+.featured-project-list-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos responsivos */
+@media (max-width: 900px) {
+  .featured-project-list-container {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  .featured-project-list-container h1 {
+    font-size: 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .featured-project-list li {
+    padding: 18px 20px;
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .featured-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  .featured-project-list-container {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .featured-project-list-container h1 {
+    font-size: 24px;
+  }
+
+  .featured-project-list-container > button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .featured-project-list li {
+    padding: 15px;
+  }
+
+  .featured-buttons {
+    gap: 15px;
+  }
+
+  .featured-buttons-item span {
+    font-size: 11px;
+  }
+
+  .featured-edit-project-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .featured-edit-project-btn i {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-project-list-container h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .featured-project-list li {
+    text-align: center;
+  }
+
+  .featured-buttons {
+    justify-content: center;
+  }
+}

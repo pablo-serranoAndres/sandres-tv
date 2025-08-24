@@ -1,0 +1,79 @@
+<h1>Nuevo proyecto</h1>
+
+<form
+  action="/upload-project"
+  method="post"
+  enctype="multipart/form-data"
+  name="upload-project"
+>
+  <div id="main-info" class="main-info">
+    <label for="main-title">Título</label>
+    <input type="text" name="main-title" id="main-title" />
+
+    <label for="main-description">Descripción</label>
+    <textarea
+      name="main-description"
+      id="main-description"
+      cols="30"
+      rows="10"
+    ></textarea>
+    <div class="form-media">
+      <div>
+        <label for="main-image">Imagen</label>
+        <input
+          type="file"
+          name="main-image"
+          id="main-image"
+          accept="image/*"
+          data-path=""
+          data-disabled="false"
+        />
+      </div>
+      <div>
+        <label for="main-video">Video</label>
+        <input
+          type="file"
+          name="main-video"
+          id="main-video"
+          accept="video/*"
+          data-path=""
+          data-disabled="false"
+        />
+      </div>
+
+      <label for="main-categorie">Seleccionar categoría:</label>
+      <select name="main-categorie" id="main-categorie">
+        <option value="Celebraciones">Celebraciones</option>
+        <option value="Deportes">Deportes</option>
+        <option value="Familia">Familia</option>
+        <option value="Fotos" disabled>Fotos</option>
+        <option value="Guillermo">Guillermo</option>
+        <option value="Pablo">Pablo</option>
+        <option value="Teatro">Teatro</option>
+        <option value="Varios">Varios</option>
+        <option value="Viajes">Viajes</option>
+      </select>
+    </div>
+    <div class="scenes-container" id="scenes-container">
+      <input
+        type="button"
+        value="Añadir escena"
+        id="add-scene-btn-0-0"
+        name="add-scene-btn-0-0"
+      />
+    </div>
+    <div class="submenu-container" id="submenu-container">
+      <input
+        type="button"
+        value="Añadir submenú"
+        id="add-submenu-btn-0-0"
+        name="add-submenu-btn-0-0"
+      />
+    </div>
+  </div>
+  <input type="submit" value="GUARDAR PROYECTO" id="save-project-btn" />
+
+  <div id="icon-loader" class="submit-loading disabled-btn-style">
+    <i class="fas fa-spinner icon-spinner"></i>
+  </div>
+</form>

@@ -1,0 +1,34 @@
+<div class="header">
+  <h1>Panel de Administración</h1>
+  <!-- <div class="user-info">
+    <div class="user-avatar">S</div>
+    <span>Administrador</span>
+  </div> -->
+</div>
+
+<div class="stats-cards">
+  <% cards.forEach(card => { %>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title"><%= card.title %></div>
+      <div class="card-icon">
+        <i class="fa-solid fa-file"></i>
+      </div>
+    </div>
+    <div class="card-value"><%= card.value %> <%= card.simbol %></div>
+  </div>
+  <% }) %>
+</div>
+
+<div class="content-section">
+  <div class="section-header">
+    <div class="section-title">Proyectos recientes</div>
+    <button class="btn btn-primary" onclick="loadPartial('new-project-form');">
+      <i class="fa-solid fa-plus"></i> Nuevo proyecto
+    </button>
+  </div>
+  <p>
+    Aquí se mostrarán los proyectos recientes. Puedes crear un nuevo proyecto
+    haciendo clic en el botón "Nuevo proyecto".
+  </p>
+</div>

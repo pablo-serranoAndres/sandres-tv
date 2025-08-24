@@ -3,13 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/newProjectForm.css" />
+    <link rel="stylesheet" href="/css/mainStyles.css" />
+    <link rel="stylesheet" href="/css/projectList.css" />
+    <link rel="stylesheet" href="/css/featuredProjectList.css" />
+
+    <script src="/js/dynamicForm.js"></script>
+    <script src="/js/generateJson.js"></script>
+    <script src="/js/uploadFiles.js"></script>
+    <script src="/js/classEffects.js"></script>
+    <script src="/js/navigation.js"></script>
+
     <title>Sandres tv</title>
   </head>
-  <body>
-    <ul>
-      <li>
-        <a href="/new-project">Crear proyecto</a>
-      </li>
-    </ul>
+  <body onload="loadPartial('main-page')">
+    <div class="main-view">
+      <div class="navigation">
+        <img src="images/logo-letters.png" alt="Logo" />
+        <ul>
+          <li id="admin-page" class="active">
+            <i id="admin-page" class="fa-solid fa-home"></i>
+            <span id="admin-page">Inicio</span>
+          </li>
+          <li id="new-project">
+            <i id="new-project" class="fa-solid fa-file-circle-plus"></i>
+            <span id="new-project">Nuevo proyecto</span>
+          </li>
+          <li id="edit-project">
+            <i id="edit-project" class="fa-solid fa-file-pen"></i>
+            <span id="edit-project">Editar proyecto</span>
+          </li>
+          <li id="edit-featured">
+            <i id="edit-featured" class="fa-solid fa-star"></i>
+            <span id="edit-featured">Destacados</span>
+          </li>
+        </ul>
+      </div>
+      <div id="content" class="content"></div>
+    </div>
   </body>
 </html>

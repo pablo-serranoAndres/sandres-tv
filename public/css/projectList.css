@@ -1,0 +1,159 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  color: #333;
+  /* padding: 20px; */
+  min-height: 100vh;
+}
+
+/* Estilos para el contenedor de edición de proyectos */
+.project-list-container {
+  max-width: 900px;
+  margin: 0px auto;
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(142, 121, 96, 0.1);
+}
+
+.project-list-container h1 {
+  color: #6c5d4b;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e8e1d7;
+  text-align: left;
+}
+
+/* Estilos para la lista de proyectos */
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5a4b3a;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(142, 121, 96, 0.1);
+}
+
+/* Alternar colores de fila */
+.project-list li:nth-child(odd) {
+  background-color: #f8f9fa; /* Gris muy claro */
+}
+
+.project-list li:nth-child(even) {
+  background-color: #e9ecef; /* Gris ligeramente más oscuro */
+}
+
+/* Quitar borde del último elemento */
+.project-list li:last-child {
+  border-bottom: none;
+}
+
+/* Estilos para el botón de editar */
+.edit-project-btn {
+  background: linear-gradient(135deg, #8e7960 0%, #bda18a 100%);
+  border: none;
+  border-radius: 12px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(142, 121, 96, 0.25);
+}
+
+.edit-project-btn:hover {
+  background: linear-gradient(135deg, #7c6952 0%, #a58a6e 100%);
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(142, 121, 96, 0.35);
+}
+
+.edit-project-btn i {
+  font-size: 18px;
+  color: white;
+}
+
+/* Estilos para el texto del proyecto */
+.project-list li {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Efecto de transición suave para toda la lista */
+.project-list-container {
+  transition: transform 0.3s ease;
+}
+
+.project-list-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .project-list-container {
+    margin: 15px;
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .project-list-container h1 {
+    font-size: 26px;
+  }
+
+  .project-list li {
+    padding: 15px 20px;
+    font-size: 15px;
+  }
+
+  .edit-project-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .edit-project-btn i {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .project-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .edit-project-btn {
+    align-self: flex-end;
+  }
+
+  .project-list-container h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+}

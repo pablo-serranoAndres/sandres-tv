@@ -1,0 +1,13 @@
+<div class="project-list-container">
+  <h1>Editar proyectos</h1>
+  <ul class="project-list">
+    <% projects.forEach(project => { %>
+    <li>
+      <%= project.title %>
+      <button class="edit-project-btn" data-id="<%= project.id %>">
+        <i class="fa-solid fa-file-circle-plus" style="color: white"></i>
+      </button>
+    </li>
+    <% }) %>
+  </ul>
+</div>
