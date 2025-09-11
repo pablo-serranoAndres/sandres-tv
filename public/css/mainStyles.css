@@ -11,6 +11,7 @@ body {
   color: #333;
   min-height: 100vh;
   overflow-x: hidden;
+  user-select: none;
 }
 
 .main-view {
@@ -20,7 +21,7 @@ body {
 }
 
 /* Barra de navegación lateral flotante */
-.navigation {
+.navigation-container {
   width: 260px;
   background: linear-gradient(180deg, #8e7960 0%, #7a6852 100%);
   color: #fff;
@@ -36,11 +37,11 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navigation:hover {
+.navigation-container:hover {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.navigation img {
+.navigation-container img {
   width: 80%;
   max-width: 180px;
   margin: 0 auto 40px auto;
@@ -49,17 +50,17 @@ body {
   transition: transform 0.3s ease;
 }
 
-.navigation:hover img {
+.navigation-container:hover img {
   transform: scale(1.05);
 }
 
-.navigation ul {
+.navigation-container ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.navigation li {
+.navigation-container li {
   padding: 15px 20px;
   margin-bottom: 12px;
   border-radius: 12px;
@@ -72,7 +73,7 @@ body {
   overflow: hidden;
 }
 
-.navigation li::before {
+.navigation-container li::before {
   content: "";
   position: absolute;
   top: 0;
@@ -88,38 +89,38 @@ body {
   transition: left 0.5s ease;
 }
 
-.navigation li:hover::before {
+.navigation-container li:hover::before {
   left: 100%;
 }
 
-.navigation li:hover {
+.navigation-container li:hover {
   background-color: rgba(255, 255, 255, 0.15);
   transform: translateX(8px);
 }
 
-.navigation li.active {
+.navigation-container li.active {
   background-color: #bda18a;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.navigation li i {
+.navigation-container li i {
   font-size: 18px;
   width: 20px;
   text-align: center;
   transition: transform 0.3s ease;
 }
 
-.navigation li:hover i {
+.navigation-container li:hover i {
   transform: scale(1.2);
 }
 
-.navigation li span {
+.navigation-container li span {
   font-size: 16px;
   font-weight: 500;
   transition: transform 0.3s ease;
 }
 
-.navigation li:hover span {
+.navigation-container li:hover span {
   transform: translateX(5px);
 }
 
@@ -289,7 +290,7 @@ body {
 
 /* Responsive */
 @media (max-width: 992px) {
-  .navigation {
+  .navigation-container {
     transform: translateX(-100%);
     margin: 0;
     border-radius: 0;
@@ -298,7 +299,7 @@ body {
     z-index: 1000;
   }
 
-  .navigation.active {
+  .navigation-container.active {
     transform: translateX(0);
   }
 

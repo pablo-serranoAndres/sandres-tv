@@ -1,6 +1,4 @@
 const app = require("./app.js");
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
-app.listen(PORT, () => {
-  console.log("Servidor corriendo en puerto 3000");
-});
+app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));

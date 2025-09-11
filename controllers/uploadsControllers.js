@@ -75,3 +75,31 @@ exports.handleCategories = (req, res) => {
     }
   });
 };
+
+exports.featuredProjects = async (req, res) => {
+  try {
+    const featuredProjects = req.body;
+    const folder = path.join(__dirname, "..", "uploads", "categories.json");
+
+    const dataRAW = await fs.promises.readFile(folder, "utf-8");
+    const data = JSON.parse(dataRAW);
+
+    data.forEach((category) => {
+      category.items.forEach((item) => {
+        item.featured = featuredProjects.some(
+          (fp) => fp.id === item.id && fp.featured
+        );
+      });
+    });
+
+    fs.writeFile(folder, JSON.stringify(data, null, 2), (err) => {
+      if (err) throw err;
+      console.log("Archivo guardado");
+    });
+
+    res.json({ success: true, message: "Proyectos destacados actualizados" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: "Error al actualizar" });
+  }
+};

@@ -4,6 +4,7 @@ const upload = require("../middlewares/multerConfig");
 const uploadControllers = require("../controllers/uploadsControllers");
 
 router.post("/image", upload.single("file"), uploadControllers.handleFile);
+router.post("/featuredProjects", uploadControllers.featuredProjects);
 router.post("/categories", uploadControllers.handleCategories);
 router.post("/video", upload.single("file"), uploadControllers.handleFile);
 router.post("/audio", upload.single("file"), uploadControllers.handleFile);

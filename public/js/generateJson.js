@@ -160,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const addToCategoriesJSON = (categorie, id, title, image) => {
-    console.log(`añadiendo categoria: ${categorie}`);
     const adaptedRoute = `/${image}`;
     fetch(`/stick/categories`)
       .then((res) => res.json())

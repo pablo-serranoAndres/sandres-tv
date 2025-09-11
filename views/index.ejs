@@ -10,12 +10,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="/css/modal.css" />
     <link rel="stylesheet" href="/css/newProjectForm.css" />
     <link rel="stylesheet" href="/css/mainStyles.css" />
     <link rel="stylesheet" href="/css/projectList.css" />
     <link rel="stylesheet" href="/css/featuredProjectList.css" />
 
-    <script src="/js/dynamicForm.js"></script>
+    <script src="/js/dynamicProjectForm.js"></script>
+    <script src="/js/dynamicFeaturedForm.js"></script>
     <script src="/js/generateJson.js"></script>
     <script src="/js/uploadFiles.js"></script>
     <script src="/js/classEffects.js"></script>
@@ -25,9 +27,9 @@
   </head>
   <body onload="loadPartial('main-page')">
     <div class="main-view">
-      <div class="navigation">
+      <div class="navigation-container">
         <img src="images/logo-letters.png" alt="Logo" />
-        <ul>
+        <ul class="navigation">
           <li id="admin-page" class="active">
             <i id="admin-page" class="fa-solid fa-home"></i>
             <span id="admin-page">Inicio</span>

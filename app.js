@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const path = require("path"); // 👈 esto falta en tu código
+const path = require("path");
 const cors = require("cors");
 
 const partialsRoutes = require("./routes/partials");

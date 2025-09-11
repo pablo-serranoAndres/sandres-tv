@@ -1,5 +1,30 @@
-const { getAllProjectsByType } = require("../services/jsonService");
+const { getAllProjects } = require("../services/jsonService");
 const { getCardsValues } = require("../services/mainPanelService");
+
+const alertToChangeMessage =
+  "¿Estás seguro de que quieres continuar? Asegúrate de guardar tus cambios antes de seguir.";
+const alertToDeleteMessage =
+  "¡Cuidado! Si borras esto, no podrás recuperarlo. ¿Seguro que quieres continuar?";
+
+exports.userCheck = (req, res) => {
+  const current = req.query.current;
+  const wantedUrl = req.query.wantedUrl;
+  const messageType = req.query.messageType;
+
+  switch (messageType) {
+    case "alertToChange":
+      alertMessage = alertToChangeMessage;
+      break;
+    case "alertToDelete":
+      alertMessage = alertToDeleteMessage;
+      break;
+
+    default:
+      break;
+  }
+
+  res.render("partials/modal", { current, wantedUrl, alertMessage });
+};
 
 exports.mainPanel = async (req, res) => {
   const cardsValues = await getCardsValues();
@@ -22,26 +47,19 @@ exports.newProjectForm = (req, res) => {
 };
 
 exports.showProjectList = async (req, res) => {
-  const type = req.query.type;
-  console.log(type);
-
-  const projects = await getAllProjectsByType(type);
-
-  if (type === "featured") {
-    const title = "destacados";
-    res.render("partials/featured-project-list", { projects, title });
-  }
+  const projects = await getAllProjects();
 
   res.render("partials/project-list", { projects });
+};
+exports.showFeaturedProjectList = async (req, res) => {
+  const projects = await getAllProjects();
+
+  const title = "destacados";
+  res.render("partials/featured-project-list", { projects, title });
 };
 
 exports.editProjectForm = (req, res) => {
   res.render("partials/edit-project", { projects });
-};
-exports.featuredProjectForm = (req, res) => {
-  const featuredProjects = getAllFeaturedProjects();
-
-  res.render("partials/featured-projects", { featuredProjects });
 };
 
 exports.newScene = (req, res) => {

@@ -1,0 +1,21 @@
+<div id="modal-overlay" class="modal-overlay">
+  <div class="modal-container">
+    <h2>¡Advertencia!</h2>
+    <span id="current-page" style="visibility: hidden"><%= current %></span>
+    <span id="wantedUrl-page" style="visibility: hidden"><%= wantedUrl %></span>
+
+    <p><%= alertMessage %></p>
+    <div>
+      <!-- `${<%= current %>}` -->
+      <button
+        class="continue-btn"
+        onclick="continueNavigation('<%= wantedUrl %>')"
+      >
+        Continuar
+      </button>
+      <button class="cancel-btn" onclick="cancelNavigation('<%= current %>')">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
