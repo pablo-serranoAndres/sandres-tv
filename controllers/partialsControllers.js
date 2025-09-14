@@ -51,7 +51,6 @@ exports.newProjectForm = (req, res) => {
 
 exports.showProjectList = async (req, res) => {
   const type = req.params.type;
-  console.log(type);
   const projects = await getAllProjects();
 
   if (projects.length > 0) {
