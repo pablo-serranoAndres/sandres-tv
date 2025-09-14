@@ -10,12 +10,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="stylesheet" href="/css/modal.css" />
     <link rel="stylesheet" href="/css/newProjectForm.css" />
     <link rel="stylesheet" href="/css/mainStyles.css" />
     <link rel="stylesheet" href="/css/projectList.css" />
     <link rel="stylesheet" href="/css/featuredProjectList.css" />
+    <link rel="stylesheet" href="/css/deleteProjectList.css" />
 
+    <script src="/js/dynamicDeleteForm.js"></script>
     <script src="/js/dynamicProjectForm.js"></script>
     <script src="/js/dynamicFeaturedForm.js"></script>
     <script src="/js/generateJson.js"></script>
@@ -25,7 +28,7 @@
 
     <title>Sandres tv</title>
   </head>
-  <body onload="loadPartial('main-page')">
+  <body onload="loadPartial('admin-page')">
     <div class="main-view">
       <div class="navigation-container">
         <img src="images/logo-letters.png" alt="Logo" />
@@ -45,6 +48,10 @@
           <li id="edit-featured">
             <i id="edit-featured" class="fa-solid fa-star"></i>
             <span id="edit-featured">Destacados</span>
+          </li>
+          <li id="delete-project">
+            <i id="delete-project" class="fa-solid fa-folder-minus"></i>
+            <span id="delete-project">Borrar proyecto</span>
           </li>
         </ul>
       </div>

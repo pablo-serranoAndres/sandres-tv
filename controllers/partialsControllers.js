@@ -1,4 +1,7 @@
-const { getAllProjects } = require("../services/jsonService");
+const {
+  getAllProjects,
+  deleteProjectById,
+} = require("../services/jsonService");
 const { getCardsValues } = require("../services/mainPanelService");
 
 const alertToChangeMessage =
@@ -47,15 +50,49 @@ exports.newProjectForm = (req, res) => {
 };
 
 exports.showProjectList = async (req, res) => {
+  const type = req.params.type;
+  console.log(type);
   const projects = await getAllProjects();
 
-  res.render("partials/project-list", { projects });
+  if (projects.length > 0) {
+    switch (type) {
+      case "edit-project":
+        res.render("partials/project-list", { projects });
+        break;
+      case "edit-featured":
+        const title = "destacados";
+        res.render("partials/featured-project-list", { projects, title });
+        break;
+      case "delete-project":
+        res.render("partials/delete-project-list", { projects });
+        break;
+
+      default:
+        break;
+    }
+  }
 };
-exports.showFeaturedProjectList = async (req, res) => {
-  const projects = await getAllProjects();
+// exports.showFeaturedProjectList = async (req, res) => {
+//   const projects = await getAllProjects();
 
-  const title = "destacados";
-  res.render("partials/featured-project-list", { projects, title });
+//   const title = "destacados";
+//   res.render("partials/featured-project-list", { projects, title });
+// };
+
+exports.deleteProjectList = async (req, res) => {
+  try {
+    const idDelete = req.query.idDelete;
+    deleteProjectById(idDelete);
+
+    return res
+      .status(200)
+      .json({ status: "ok", message: "Proyecto eliminado" });
+  } catch (error) {
+    console.error(err);
+    return res
+      .status(500)
+      .json({ status: "error", message: "Error al eliminar proyecto" });
+  }
 };
 
 exports.editProjectForm = (req, res) => {

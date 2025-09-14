@@ -1,0 +1,28 @@
+<div class="delete-project-list-container">
+  <h1>Borrar proyectos</h1>
+  <!-- <button id="btn-handle-features" onclick="savedDeleteProjects()">
+    Guardar
+  </button> -->
+  <ul class="delete-project-list" id="delete-project-list">
+    <% projects.forEach(project => { %>
+    <li id="delete-<%= project.id %>">
+      <span data-id="<%= project.id %>"><%=project.title %></span>
+      <div class="delete-buttons">
+        <div class="delete-buttons-item">
+          <span>Destacado</span>
+          <button
+            class="delete-edit-project-btn"
+            onclick="deleteProject(event)"
+          >
+            <i
+              id="delete-icon-<%= project.id %>"
+              class="fa-solid fa-trash delete-form-icon"
+              style="color: white"
+            ></i>
+          </button>
+        </div>
+      </div>
+    </li>
+    <% }) %>
+  </ul>
+</div>

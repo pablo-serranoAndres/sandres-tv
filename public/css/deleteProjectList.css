@@ -1,0 +1,264 @@
+.delete-project-list-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(142, 121, 96, 0.1);
+}
+
+.delete-form-icon {
+  background-color: transparent !important;
+  margin-left: 0px !important;
+}
+
+.delete-project-list-container h1 {
+  color: #6c5d4b;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e8e1d7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botón Guardar principal */
+.delete-project-list-container > button {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.delete-project-list-container > button:hover {
+  background: linear-gradient(135deg, #c82333 0%, #a71e2a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(220, 53, 69, 0.4);
+}
+
+.delete-project-list-container > button i {
+  font-size: 18px;
+}
+
+/* Estilos para la lista de proyectos a borrar */
+.delete-project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.delete-project-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  color: #5a4b3a;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(142, 121, 96, 0.1);
+}
+
+/* Alternar colores de fila */
+.delete-project-list li:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+.delete-project-list li:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+/* Efecto hover para las filas */
+.delete-project-list li:hover {
+  background-color: #f5d7d9;
+  transform: translateX(5px);
+}
+
+/* Quitar borde del último elemento */
+.delete-project-list li:last-child {
+  border-bottom: none;
+}
+
+/* Contenedor de botones - OCUPA 20% */
+.delete-buttons {
+  display: flex;
+  gap: 20px;
+  width: 20%;
+  min-width: 160px;
+  justify-content: flex-end;
+}
+
+/* Cada grupo de botón con texto */
+.delete-buttons-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Texto centrado sobre el botón */
+.delete-buttons-item span {
+  font-size: 12px;
+  color: #6c5d4b;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Estilos para los botones de borrado */
+.delete-edit-project-btn {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  border: none;
+  border-radius: 10px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(220, 53, 69, 0.2);
+}
+
+.delete-edit-project-btn:hover {
+  background: linear-gradient(135deg, #c82333 0%, #a71e2a 100%);
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+.delete-edit-project-btn i {
+  font-size: 16px;
+  color: white;
+}
+
+/* Estilos para el texto del proyecto (ocupa el 80% restante) */
+.delete-project-list li span {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 8px;
+  padding: 5px 10px;
+  transition: all 0.2s ease;
+}
+
+/* Efecto de transición suave para toda la lista */
+.delete-project-list-container {
+  transition: transform 0.3s ease;
+}
+
+.delete-project-list-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos para elementos marcados para borrado */
+.delete-project-list li.marked-for-deletion {
+  background-color: #ffeaea;
+  border-left: 4px solid #dc3545;
+}
+
+.delete-project-list li.marked-for-deletion span {
+  text-decoration: line-through;
+  color: #dc3545;
+}
+
+/* Estilos responsivos */
+@media (max-width: 900px) {
+  .delete-project-list-container {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  .delete-project-list-container h1 {
+    font-size: 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .delete-project-list li {
+    padding: 18px 20px;
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .delete-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  .delete-project-list-container {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .delete-project-list-container h1 {
+    font-size: 24px;
+  }
+
+  .delete-project-list-container > button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .delete-project-list li {
+    padding: 15px;
+  }
+
+  .delete-buttons {
+    gap: 15px;
+  }
+
+  .delete-buttons-item span {
+    font-size: 11px;
+  }
+
+  .delete-edit-project-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .delete-edit-project-btn i {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .delete-project-list-container h1 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .delete-project-list li {
+    text-align: center;
+  }
+
+  .delete-buttons {
+    justify-content: center;
+  }
+}

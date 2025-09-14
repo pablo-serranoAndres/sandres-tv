@@ -2,16 +2,14 @@ const express = require("express");
 const router = express.Router();
 const partialControllers = require("../controllers/partialsControllers");
 
-router.get("/main-page", partialControllers.mainPanel);
-router.get("/new-project-form", partialControllers.newProjectForm);
+router.get("/admin-page", partialControllers.mainPanel);
+router.get("/new-project", partialControllers.newProjectForm);
 
-router.get("/project-list", partialControllers.showProjectList);
-router.get(
-  "/featured-projects-list",
-  partialControllers.showFeaturedProjectList
-);
+router.get("/show-project-list/:type", partialControllers.showProjectList);
 
-router.get("/edit-project-form", partialControllers.editProjectForm);
+// router.get("/edit-project", partialControllers.showProjectList);
+// router.get("/edit-featured", partialControllers.showProjectList);
+router.delete("/delete-project", partialControllers.deleteProjectList);
 
 router.get("/new-scene", partialControllers.newScene);
 router.get("/new-submenu", partialControllers.newSubmenu);

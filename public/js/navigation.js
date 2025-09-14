@@ -1,11 +1,17 @@
-let current = "main-page";
-
 document.addEventListener("DOMContentLoaded", () => {
+  let current = "admin-page";
+
   const navigation = document.querySelector(".navigation");
   if (!navigation) return;
 
   navigation.addEventListener("click", async (e) => {
-    await showModal(current, e.target);
+    if (current === "admin-page") {
+      navigate(e.target.id);
+      current = e.target.id;
+    } else {
+      navigate(e.target.id);
+      // await showModal(current, e.target);
+    }
   });
 });
 
@@ -19,24 +25,25 @@ const navigate = async (wantedUrl) => {
     });
 
     optionSelected.className = "active";
+    loadPartial(wantedUrl);
 
-    switch (wantedUrl) {
-      case "admin-page":
-        loadPartial("main-page");
-        break;
-      case "new-project":
-        loadPartial("new-project-form");
-        break;
-      case "edit-project":
-        loadPartial("project-list");
-        break;
-      case "edit-featured":
-        loadPartial("featured-projects-list");
-        break;
+    // switch (wantedUrl) {
+    //   case "admin-page":
+    //     loadPartial("main-page");
+    //     break;
+    //   case "new-project":
+    //     loadPartial("new-project-form");
+    //     break;
+    //   case "edit-project":
+    //     loadPartial("project-list");
+    //     break;
+    //   case "edit-featured":
+    //     loadPartial("featured-projects-list");
+    //     break;
 
-      default:
-        break;
-    }
+    //   default:
+    //     break;
+    // }
   } else {
     cancelNavigation(document.getElementById("current-page").textContent);
   }
@@ -57,10 +64,24 @@ const showModal = async (current, wantedUrl) => {
 
 const loadPartial = async (url) => {
   const container = document.getElementById("content");
+  let response;
   container.innerHTML = "";
 
   try {
-    const response = await fetch(`/partial/${url}`);
+    switch (url) {
+      case "admin-page":
+        response = await fetch(`/partial/${url}`);
+        break;
+
+      case "new-project":
+        response = await fetch(`/partial/${url}`);
+        break;
+
+      default:
+        response = await fetch(`/partial/show-project-list/${url}`);
+        break;
+    }
+
     const content = await response.text();
     container.innerHTML = content;
   } catch (err) {
